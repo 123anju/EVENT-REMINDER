@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        HTML Document Structure
+    </title>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css" />
+</head>
+<body style="background-color: silver">
+
+<form action="/senddb" method="post"  id="myForm">
+    <h1>Add Event In Calender</h1>
+    <div class="inset">
+        <p>
+            <label for="email">Task</label>
+            <input type="text" class="p-container" name="task1" required="required">
+        </p>
+        <p>
+            <label for="password">Event Date</label>
+            <input type="date"  data-date="" data-date-format="DD MMMM YYYY" name="date" required="required">
+        </p>
+        <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </p>
+
+        <p>
+            <input type="checkbox" id="chbox" required/>
+            <label for="remember">Reminder</label>
+        </p>
+    </div>
+    <p class="p-container">
+        <!--  <span>Forgot password ?</span> -->
+        <input type="submit" class="btn btn-primary pull-right" value="ADD NOW" id="submit">
+    </p>
+</form>
+
+<script>
+
+    $(function(){
+        $("#myForm").on('submit',function(){
+            if(document.getElementById("chbox").checked)
+            {
+                $("#myForm").submit();
+            }
+            else
+            {
+                e.preventDefault();
+                alert('Please check the box before submitting the form');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
